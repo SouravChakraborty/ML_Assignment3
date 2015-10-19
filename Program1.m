@@ -1,6 +1,7 @@
 load('iris.dat.mat');
-% Descritizing the dataset 
+% Descritizing the dataset
 Desc_Mat=floor(Data+1);
+Desc_Mat(:,5)=Desc_Mat(:,5)-1;
 
 [row column]=size(Desc_Mat);
 
@@ -16,17 +17,19 @@ TestData=Desc_Mat(testIdx,:);
 
 [h]=findsAlgorithm(TrainData)
 %     Output hypothesis from the Find-S Alogirthm is
-printf('Output hypothesis from the Find-S Alogirthm\n')
+fprintf('Output hypothesis from the Find-S Alogirthm\n')
 disp(h);
 
+% % % % % % % % % % % ListE alogirthm  % % % % % % % % % % % % % % % %  % % % % % %
 
 
-% % % % % % % % % % % Candidate Alogrithm  % %  % % %  % % % % 
+
+
+
+% % % % % % % % % % % Candidate Alogrithm  % %  % % %  % % % %
 
 AttrMat=Desc_Mat(:,1:4);
 AttrMat(row+1,1:4)=G;
-AttrMat(row+2,1:4)=S;
-
 matAttr1=unique(AttrMat(:,1));
 matAttr2=unique(AttrMat(:,2));
 matAttr3=unique(AttrMat(:,3));
@@ -43,8 +46,9 @@ for idx1=1:length(matAttr1)
         end
     end
 end
+[r c]=size(H);
+H(r+1,1:4)=S;
 
-H;
 
 
 
