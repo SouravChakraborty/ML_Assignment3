@@ -15,7 +15,7 @@ TestData=Desc_Mat(testIdx,:);
 
 % % % % % % % % % % % Find-S alogirthm  % % % % % % % % % % % % % % % %  % % % % % %
 
-[h]=findsAlgorithm(TrainData)
+[h]=findsAlgorithm(TrainData);
 %     Output hypothesis from the Find-S Alogirthm is
 fprintf('Output hypothesis from the Find-S Alogirthm\n')
 disp(h);
@@ -27,9 +27,12 @@ disp(h);
 
 
 % % % % % % % % % % % Candidate Alogrithm  % %  % % %  % % % %
+S=[0,0,0,0];
+G=[-1,-1,-1,-1];
 
 AttrMat=Desc_Mat(:,1:4);
 AttrMat(row+1,1:4)=G;
+
 matAttr1=unique(AttrMat(:,1));
 matAttr2=unique(AttrMat(:,2));
 matAttr3=unique(AttrMat(:,3));
