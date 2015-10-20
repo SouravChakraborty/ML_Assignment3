@@ -6,7 +6,7 @@ h=S;
 for idx=1:length(TrainData)
     
     if(TrainData(idx,5)==1)
-        if idx==1
+        if h(1,:)==0
             h=TrainData(idx,1:4);
         end
         
